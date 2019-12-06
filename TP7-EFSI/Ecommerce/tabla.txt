@@ -1,0 +1,41 @@
+<thead>
+                                        <tr>
+                                            <th>Producto</th>
+											<th>Categoría</th>
+                                            <th>Precio</th>
+                                            <th>Stock</th>
+											<th colspan="3"> Accion </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <!--<td style="text-align:center;" class="tooltip">
+												<div>
+													Hover over me
+													<span class="tooltiptext"> <img src="images/A9.png" alt="imagen" class="image"/></span>
+												</div>
+											</td>
+                                            <td>Teléfonos</td>
+                                            <td>US$399,99</td>
+                                            <td>9</td>-->
+										<?php foreach(productoDAO::ObtenerTodosLosProductos() as $item) {?>
+											<tr>
+												<td><?php echo $item->NombreProducto;?></td>
+												<td><?php echo $item->IdCategoria;?></td>
+												<td><?php echo $item->Precio;?></td>
+												<td><?php echo $item->StockActual;?></td>
+												<td>
+												<div class="card-body">
+													<div class="col-md-4">
+														<button type="button" id="ver" class="btn btn-outline-primary btn-lg btn-block">Ver</button>
+													</div>
+													<div class="col-md-4">
+														<button type="button" id="editar" class="btn btn-outline-secondary btn-lg btn-block">Editar</button>
+													</div>
+													<div class="col-md-4">
+														<button type="button" id="eliminar" class="btn btn-outline-danger btn-lg btn-block">Eliminar</button>
+													</div>
+												</div>
+											</td>
+											</tr>
+										<?php } ?>
+                                    </tbody>
